@@ -294,7 +294,7 @@ SUB checkmolecule (m AS INTEGER)
         molecules(m).coord.x = molecules(m).coord.x + molecules(m).vx
         molecules(m).coord.y = molecules(m).coord.y + molecules(m).vy
     END IF
-    IF inbounds(mouse.coord, molecules(m).coord, 15 + (3 * LOG(level + 1))) AND mouse.left AND lockmouse = 0 THEN
+    IF inbounds(mouse.coord, molecules(m).coord, 15 + (3 * LOG(level + 1))) AND mouse.left AND lockmouse = 0 AND molecules(m).name <> "CO2" THEN
         SELECT CASE molecules(m).name
             CASE "Ca"
                 calcium = calcium + 1
